@@ -48,3 +48,27 @@ Object - valueOf, toString(), hasOwnProperty(), isPrototypeOf(), constructor etc
     Date : getDate(), getMonth(), Date.now()  etc
     Function : call(), bind(), apply(), name
     Person : firstName, lastName, sayHello()
+
+
+# ES2015 / ECMAScript6
+- Arrow Functions
+- let and const 
+- Destructuring
+- Spread / Rest Operator
+- Template Literals
+- Promise API
+- Classes
+- Inheritance
+- Modules
+- Map / Set
+
+
+# Array Methods -
+- map
+- push
+- find
+- filter
+- some
+- every
+- findIndex
+- forEach
