@@ -44,4 +44,80 @@ console.log(userA.name);            // ?
 
 
 // - Constructor
-// - Instance
+
+// function Person(fname, lname){
+//     // var this = {}
+//     this.firstName = fname;
+//     this.lastName = lname;
+//     // this.sayHello = function(){
+//     //     return "Hello from " + this.firstName + " " + this.lastName;
+//     // }
+//     // return this;
+// }
+
+// Person.prototype.sayHello = function(){
+//     return "Hello from " + this.firstName + " " + this.lastName;
+// }
+
+// var john = new Person("John","Doe");
+// console.log(john.sayHello());
+// var jenny = new Person("Jenny","Doe");
+// console.log(jenny.sayHello());
+
+
+// var str = "Some string";
+
+// String.prototype.countCharacter = function(letter){
+//     var count = 0;
+//     for(var i = 0; i < this.length; i++){
+//         if(this.charAt(i).toLowerCase() === letter.toLowerCase()){
+//             count++
+//         }
+//     }
+//     return count;
+// }
+
+// console.log("Number of characters : " ,str.countCharacter('s'))
+
+// var str = new String();
+// String.prototype.length = 101;
+// console.log(str.length)         // 11
+
+// var str = "String value";
+// console.log(str.constructor)
+
+// var num = 101;
+// console.log(num.constructor);
+
+
+
+
+
+
+
+
+
+
+
+
+// - Instance : inheritance in JavaScript
+
+var Shoe = {
+    size : 9,
+    construcion : 'Sneaker'
+}
+
+var magicShoe = Object.create(Shoe)
+
+magicShoe.construcion = "Slipper";
+console.log(magicShoe.size);
+console.log(magicShoe.construcion);
+
+console.log(magicShoe.hasOwnProperty("size"))
+console.log(Shoe.hasOwnProperty("size"))
+
+console.log(Shoe.isPrototypeOf(magicShoe))
+console.log(magicShoe.isPrototypeOf(Shoe))
+
+console.log(Object.prototype.isPrototypeOf(Shoe))
+console.log(Object.prototype.isPrototypeOf(magicShoe))
