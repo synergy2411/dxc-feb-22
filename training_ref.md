@@ -59,8 +59,8 @@ Object - valueOf, toString(), hasOwnProperty(), isPrototypeOf(), constructor etc
 - Promise API
 - Classes
 - Inheritance
+- Map : key-value / Set : unique values
 - Modules
-- Map / Set
 
 
 # Array Methods -
