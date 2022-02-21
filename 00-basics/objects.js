@@ -119,5 +119,5 @@ console.log(Shoe.hasOwnProperty("size"))
 console.log(Shoe.isPrototypeOf(magicShoe))
 console.log(magicShoe.isPrototypeOf(Shoe))
 
-console.log(Object.prototype.isPrototypeOf(Shoe))
-console.log(Object.prototype.isPrototypeOf(magicShoe))
+console.log(Object.prototype.isPrototypeOf(Shoe))           // true
+console.log(Object.prototype.isPrototypeOf(magicShoe))      // true

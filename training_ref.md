@@ -35,3 +35,16 @@ Asynchronous Task - Timers, read/writing, socket, remote server call, DB Conn
 - Promise API
 - Async...await
 - Observable - reactivex.io
+
+
+# Object Hierarchy
+Object - valueOf, toString(), hasOwnProperty(), isPrototypeOf(), constructor etc
+    String : charAt(), indexOf(), subString(), length etc
+        var str = "Some String";
+        str.toString();
+    Number : toFixed, isNan()
+    Boolean : isBoolean()
+    Array : pop, push, shift, every, filter, some, slice etc
+    Date : getDate(), getMonth(), Date.now()  etc
+    Function : call(), bind(), apply(), name
+    Person : firstName, lastName, sayHello()
