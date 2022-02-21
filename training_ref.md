@@ -29,3 +29,9 @@ Synchronous Task - Console.log, if/else, for
 Asynchronous Task - Timers, read/writing, socket, remote server call, DB Conn
     - Macro : All Async task are Macro
     - Micro : Promises, queueMicrotask
+
+# Ways to handle Async JavaScript
+- Callback functions
+- Promise API
+- Async...await
+- Observable - reactivex.io
