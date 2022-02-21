@@ -1,3 +1,5 @@
+console.log(x);
+
 // var flag = false;
 // function longRunningOp(){
 //     setTimeout(function(){

@@ -12,7 +12,13 @@
 // Lexical Environment - defined the outer scope based upon function placement
 // Scope chaining -> inner -> outer -> global
 
-// var x = 101;
+// (function(){
+//     var x = 101;
+// }())
+
+// (function(){
+//     console.log(x);     // "undefined"
+// })()
 
 // function a(){
 //     // var x =201;
