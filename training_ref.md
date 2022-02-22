@@ -72,3 +72,12 @@ Object - valueOf, toString(), hasOwnProperty(), isPrototypeOf(), constructor etc
 - every
 - findIndex
 - forEach
+
+
+# CommonJS Module Pattern (by default in NodeJS)
+    - to import the module => require
+    - to export the module => module.exports variable
+# ES6 Module (Third Party library - babelJS)
+    - to import -> import statement
+    - to export -> export keyword
+# AMD Modules
