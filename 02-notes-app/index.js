@@ -1,5 +1,6 @@
 const yargs = require("yargs");
-const { addNote, readNote, removeNote } = require("./notes-crud");
+require("colors")
+const { addNote, readNote, removeNote, listNotes } = require("./notes-crud");
 
 yargs.command({
     command : "add",
@@ -18,7 +19,13 @@ yargs.command({
     },
     handler : (args) => {
         const {title, body} = args;
-        addNote(title, body);
+        addNote(title, body, (err, result) => {
+            if(err){
+                console.log(err.toString().red)
+            }else{
+                console.log(result.status.toString().green);
+            }
+        });
     }
 })
 
@@ -32,9 +39,16 @@ yargs.command({
              description : "title for seraching note"
          }
     },
-    handler : (args) => {
+    handler : async (args) => {
         const {title} = args
-        readNote(title)
+        try{
+            const foundNote = await readNote(title)
+            console.log("Note Found".green.underline);
+            console.log("Title : ".bold, foundNote.title);
+            console.log("Body : ".bold, foundNote.body);
+        }catch(err){
+            console.log(err.message.toString().red);
+        }
     }
 })
 
@@ -50,6 +64,14 @@ yargs.command({
     },
     handler : args => {
         removeNote(args.title);
+    }
+})
+
+yargs.command({
+    command : "list",
+    description : "to read all notes",
+    handler : () => {
+        listNotes()
     }
 })
 
