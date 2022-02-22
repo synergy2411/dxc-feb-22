@@ -40,6 +40,10 @@ const fs = require("fs")
 
 
 const http = require("http");
+const {PORT} = require("./environment")
+// require("dotenv").config();
+
+// const PORT = process.env.PORT || 9091
 
 const requestListener = (request, response) => {
     console.log("URL : ", request.url);
@@ -51,4 +55,4 @@ const requestListener = (request, response) => {
 
 const server = http.createServer(requestListener)
 
-server.listen(9090, () => console.log("Server started at PORT : 9090"))
+server.listen(PORT, () => console.log("Server started at PORT : ", PORT))
