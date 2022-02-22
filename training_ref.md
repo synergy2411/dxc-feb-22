@@ -81,3 +81,7 @@ Object - valueOf, toString(), hasOwnProperty(), isPrototypeOf(), constructor etc
     - to import -> import statement
     - to export -> export keyword
 # AMD Modules
+
+
+# to generate package.json
+- npm init

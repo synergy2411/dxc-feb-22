@@ -1,0 +1,1 @@
+module.exports = () => "Today is your lucky day!";

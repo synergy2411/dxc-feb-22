@@ -1,0 +1,16 @@
+{
+  "name": "modules-demo",
+  "version": "1.0.0",
+  "description": "Awesome project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SumitK",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "colors": "^1.4.0",
+    "yargs": "^17.3.1"
+  }
+}
