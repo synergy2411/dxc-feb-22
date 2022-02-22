@@ -85,3 +85,22 @@ Object - valueOf, toString(), hasOwnProperty(), isPrototypeOf(), constructor etc
 
 # to generate package.json
 - npm init
+
+# NPM Commands
+- npm init [-y]
+- npm install [packageName] [-D / --save-dev]
+- npm outdated
+- npm update
+- npm config get/set
+- npm adduser
+- npm publish
+- npm unpublish
+- npm ls [--depth 0] [-g]
+- npm search <keyword>
+
+# Semantic Versioning X.Y.Z (semver.org)
+X : Major : new features added in app, NOT backward compatible -> 2.0.0
+Y : Minor : new features added in app, backward compatible -> 1.1.0
+Z : Patch : bug fixes, performance bug -> 1.0.1
+
+1.0.0

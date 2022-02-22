@@ -1,4 +1,6 @@
 const os = require("os")
+const { sum }= require("sk-utils-module/maths")
+
 
 console.log("Number of Processors available : " , os.cpus().length)
 

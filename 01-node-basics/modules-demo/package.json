@@ -1,6 +1,6 @@
 {
-  "name": "modules-demo",
-  "version": "1.0.0",
+  "name": "sk-utils-module",
+  "version": "1.0.1",
   "description": "Awesome project",
   "main": "app.js",
   "scripts": {
