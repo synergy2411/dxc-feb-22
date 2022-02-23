@@ -107,3 +107,9 @@ Z : Patch : bug fixes, performance bug -> 1.0.1
 
 # Nodemon
 - npm i nodemon -g
+
+# Weather App
+Mapbox API - 
+https://api.mapbox.com/geocoding/v5/mapbox.places/pune.json?access_token=pk.eyJ1Ijoic3luZXJneTI0MTEiLCJhIjoiY2p4NXc0cm53MDZoODQwbHFuNzdzMzV5NCJ9.DKIDo6bcG51yLXf2DmlYcQ
+Forecast API -
+https://api.darksky.net/forecast/473fe696d21e65026547b2d50b56014c/37.8267,-122.4233

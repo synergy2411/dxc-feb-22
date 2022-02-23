@@ -23,7 +23,6 @@ app.patch("/api/todos/:todoId", (req, res) => {
     }
 })
 
-
 app.delete("/api/todos/:todoId", (req, res) => {
     const { todoId } = req.params;
     const position = todoCollection.findIndex(todo => todo.id === todoId)
