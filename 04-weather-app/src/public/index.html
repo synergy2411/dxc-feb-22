@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+     <!-- Bootstrap Library -->
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+     crossorigin="anonymous"
+   />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="display-4 text-center">The Weather App</p>
+                        <div class="row">
+                            <div class="col-8">
+                                <input type="text" id="txtAddress" placeholder="Enter your location..." class="form-control" name="txtAddress">
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-block btn-primary" id="btnShow">Show</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const address = document.getElementById("txtAddress")
+            const btnShow = document.getElementById("btnShow");
+
+            btnShow.addEventListener("click", event => {
+                event.preventDefault();
+                fetch("/location?address="+address.value)
+                    .then(response => response.json())
+                    .then(console.log)
+                    .catch(console.log)
+            })
+        }
+    </script>
+
+</body>
+</html>
