@@ -3,8 +3,10 @@ const app = express();
 const todoCollection = [];
 
 app.use(express.urlencoded({extended  : true}));            // Parse the request object and attach 'body' with request
+app.use(express.json());                         // Parse the json format and attach it with request body
 
-app.post("/api/add-todo", (req, res) => {
+app.post("/api/todos", (req, res) => {
+    console.log(req.body)
     const {txtTodo} = req.body;
     const todo = {
         id : (todoCollection.length + 1).toString(),

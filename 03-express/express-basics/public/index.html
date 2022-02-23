@@ -1,38 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Content</title>
     <!-- Bootstrap Library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-8 offset-2">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="text-center">Todo App</h5>
-                    </div>
-                    <div class="card-body">
-                        <form action="/api/add-todo" method="POST">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-10">
-                                        <input type="text" class="form-control" name="txtTodo">
-                                    </div>
-                                    <div class="col-2">
-                                        <button type="submit" class="btn btn-primary">Add</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-8 offset-2">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="text-center">Todo App</h5>
             </div>
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-10">
+                      <input
+                        type="text"
+                        id="txtTodo"
+                        class="form-control"
+                        name="txtTodo"
+                      />
+                    </div>
+                    <div class="col-2">
+                      <button type="button" id="btnAdd" class="btn btn-primary">
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+      <br>
+      <ul class="list-group" id="todo-list"></ul>
     </div>
-</body>
+
+    <script>
+      window.onload = function () {
+        const btnAdd = document.getElementById("btnAdd");
+        const txtTodo = document.getElementById("txtTodo");
+        const todoList = document.getElementById("todo-list");
+        const todos = [];
+
+        btnAdd.addEventListener("click", (event) => {
+          event.preventDefault();
+          fetch("/api/todos", {
+              method : "POST",
+              body : JSON.stringify({txtTodo : txtTodo.value}),
+              headers : {
+                "Content-type" : "application/json"
+              }
+          }).then(response => response.json())
+            .then(result => {
+                todoList.innerHTML = '';
+                todos.push(result);
+                todos.forEach(todo => {
+                    const li = document.createElement("li")
+                    li.classList = "list-group-item";
+                    li.innerHTML = `
+                        <p>
+                            ${todo.label}    
+                        </p>
+                    `;
+                        todoList.append(li)
+                })
+            })
+            .catch(console.log)
+        });
+      };
+    </script>
+  </body>
 </html>
