@@ -45,8 +45,12 @@
           </div>
         </div>
       </div>
-      <br>
-      <ul class="list-group" id="todo-list"></ul>
+      <br />
+      <div class="row">
+        <div class="col-4 offset-4">
+          <ul class="list-group text-center" id="todo-list"></ul>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -56,30 +60,48 @@
         const todoList = document.getElementById("todo-list");
         const todos = [];
 
+        const createUI = (todos) => {
+          console.log(todos);
+          todos.forEach((todo) => {
+            const li = document.createElement("li");
+            li.classList = "list-group-item";
+            li.innerHTML = `
+                        <p>
+                            ${todo.label.toUpperCase()}    
+                        </p>
+                    `;
+            todoList.append(li);
+          });
+        };
+
+        const getTodos = () => {
+          fetch("/api/todos")
+            .then((response) => response.json())
+            .then((todos) => {
+              todos = todos;
+              createUI(todos);
+            })
+            .catch(console.log);
+        };
+
+        getTodos();
+
         btnAdd.addEventListener("click", (event) => {
           event.preventDefault();
           fetch("/api/todos", {
-              method : "POST",
-              body : JSON.stringify({txtTodo : txtTodo.value}),
-              headers : {
-                "Content-type" : "application/json"
-              }
-          }).then(response => response.json())
-            .then(result => {
-                todoList.innerHTML = '';
-                todos.push(result);
-                todos.forEach(todo => {
-                    const li = document.createElement("li")
-                    li.classList = "list-group-item";
-                    li.innerHTML = `
-                        <p>
-                            ${todo.label}    
-                        </p>
-                    `;
-                        todoList.append(li)
-                })
+            method: "POST",
+            body: JSON.stringify({ txtTodo: txtTodo.value }),
+            headers: {
+              "Content-type": "application/json",
+            },
+          })
+            .then((response) => response.json())
+            .then((result) => {
+                  todoList.innerHTML = "";
+                  todos.push(result);
+                  createUI(todos);
             })
-            .catch(console.log)
+            .catch(console.log);
         });
       };
     </script>
