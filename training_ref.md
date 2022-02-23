@@ -104,3 +104,6 @@ Y : Minor : new features added in app, backward compatible -> 1.1.0
 Z : Patch : bug fixes, performance bug -> 1.0.1
 
 1.0.0
+
+# Nodemon
+- npm i nodemon -g
