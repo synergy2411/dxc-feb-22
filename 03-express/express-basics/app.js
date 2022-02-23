@@ -9,7 +9,31 @@ const todoCollection = [
 app.use(express.urlencoded({extended  : true}));            // Parse the request object and attach 'body' with request
 app.use(express.json());                         // Parse the json format and attach it with request body
 
+app.patch("/api/todos/:todoId", (req, res) => {
+    const { todoId } = req.params;
+    const position = todoCollection.findIndex(todo => todo.id === todoId)
+    if(position >= 0){
+        todoCollection[position] = {
+            ...todoCollection[position],        // { id, label, status}
+            ...req.body                         // {label, status}
+        }
+        return res.send(todoCollection[position]);
+    }else{
+        return res.send({err : "Item NOT found for ID - " + todoId})
+    }
+})
 
+
+app.delete("/api/todos/:todoId", (req, res) => {
+    const { todoId } = req.params;
+    const position = todoCollection.findIndex(todo => todo.id === todoId)
+    if(position >= 0){
+        todoCollection.splice(position, 1);
+        return res.send({message : "Item deleted for ID #" + todoId})
+    }else{
+        return res.send({err: "Iten NOT found for ID #"+todoId})
+    }
+})
 
 app.get("/api/todos/:todoId", (req, res) => {
     const { todoId }  = req.params;
