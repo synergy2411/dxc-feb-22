@@ -33,18 +33,29 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div id="result"></div>
+            </div>
+        </div>
     </div>
 
     <script>
         window.onload = () => {
             const address = document.getElementById("txtAddress")
             const btnShow = document.getElementById("btnShow");
+            const divResult = document.getElementById("result")
 
             btnShow.addEventListener("click", event => {
                 event.preventDefault();
                 fetch("/location?address="+address.value)
                     .then(response => response.json())
-                    .then(console.log)
+                    .then(result => {
+                        divResult.innerHTML = `
+                        <p>The temperature is ${result.temperature} at location ${result.placeName}</p>
+                        <p>It is aniticated that ${result.summary}!!
+                        `
+                    })
                     .catch(console.log)
             })
         }
