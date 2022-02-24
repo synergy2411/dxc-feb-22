@@ -156,3 +156,12 @@ Heroku Cloud -> MongoDB Atlas (free version -> NO restriction)
 - Download heroku CLI - npm i heroku -g
 - Signup and login on heroku.com
 - Create Git Repo for deployed project
+- heroku login
+- heroku keys:add
+    - optional Step - to generate ssh key -> git bash -> ssh-keygen
+- heroku create <unique-app-name>
+- git remote
+- git push heroku main
+
+
+-
