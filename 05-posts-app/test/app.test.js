@@ -3,7 +3,7 @@
 // Setup & Tear Down : beforeEach(), afterEach(), beforeAll(), afterAll()
 // const asset = require("assert");
 // asset.equal(add(2,4), 9, "Not Equal as expected")
-// const { add } = require("../src/utils/maths");
+const { add } = require("../src/utils/maths");
 
 const chai = require("chai");
 const chaiHttp = require("chai-http");
@@ -16,6 +16,27 @@ describe("Posts App", () => {
 
     beforeEach(async () => {
         await PostModel.deleteMany()
+    })
+
+    describe('to test add', () => {
+        it("Testing add function", () => {
+            chai.expect(add(3,4)).to.equal(7);
+        })
+    });
+
+    describe("/GET post/:postId ", () => {
+        it("Should fetch single post", () => {
+            const post = new PostModel({title : "insurance", body: "...", author:"jenny@test.com"})
+            post.save()
+                .then(result => {
+                    chai.request(app)
+                        .get("/posts/"+result._id)
+                        .end((err, response) => {
+                            chai.expect(response.body).not.to.be.undefined;
+                            chai.expect(response.body.title).to.be.equal("insurance")
+                        })
+                })
+        })
     })
 
     describe("/POST posts", () => {
