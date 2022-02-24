@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "",
+    "start" : "node server.js",
     "prod:start" : "node server.js environement=production",
     "dev:start" : "node server.js environement=development"
   },
