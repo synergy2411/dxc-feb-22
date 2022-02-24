@@ -161,7 +161,7 @@ Heroku Cloud -> MongoDB Atlas (free version -> NO restriction)
     - optional Step - to generate ssh key -> git bash -> ssh-keygen
 - heroku create <unique-app-name>
 - git remote
-- git push heroku main
+- git push heroku main [commandline args]
 
 
 # Socket Programming

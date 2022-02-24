@@ -3,6 +3,9 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
+const cors = require("cors");
+
+app.use(cors());
 
 io.on("connection", (client) => {
     console.log("Connected...")
@@ -19,3 +22,5 @@ app.get("/index", (req, res) => {
 })
 
 server.listen(9091, () => console.log("Server started at PORT: 9091"))
+
+process.argv.environment
