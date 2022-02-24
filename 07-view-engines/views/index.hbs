@@ -1,0 +1,29 @@
+{{> header}}
+
+<h4>Handlebars Index View Template</h4>
+<p>Username : {{ username }}</p>
+<hr> 
+
+<ul>
+
+{{#each posts}}
+    <li>
+        <p>{{this.title}} created by {{this.author}}
+            Comments on POST : 
+            {{#if this.comments.length}}
+            <ul>
+            {{#each this.comments}}
+            <li>
+                {{ this }}
+            </li>
+            {{/each}}
+            </ul>
+            {{else}}
+                <p>Be the first to comment...</p>
+            {{/if}}
+
+        </p>
+    </li>
+
+{{/each}}
+</ul>
