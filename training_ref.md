@@ -164,4 +164,7 @@ Heroku Cloud -> MongoDB Atlas (free version -> NO restriction)
 - git push heroku main
 
 
--
+# Socket Programming
+- Bi-directional Full Duplex communication
+- Connected Architecture
+- socket.io
