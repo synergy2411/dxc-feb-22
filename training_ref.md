@@ -140,3 +140,11 @@ https://api.darksky.net/forecast/473fe696d21e65026547b2d50b56014c/37.8267,-122.4
 # Socket Programming
 
 # App Deployment - Heroku Cloud
+
+
+dxcuser
+sXSgCbtFfU1AJ1LB
+
+cluster0-shard-00-02.e9xsq.mongodb.net:27017
+
+mongodb+srv://dxcuser:sXSgCbtFfU1AJ1LB@cluster0.e9xsq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
