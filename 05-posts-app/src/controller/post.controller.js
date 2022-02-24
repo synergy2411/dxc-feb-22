@@ -19,7 +19,6 @@ const createPost = (req, res) => {
             return res.send(err);
         })
 }
-
 const getSinglePost = async(req, res) => {
     const { postId } = req.params;
     try{

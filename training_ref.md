@@ -113,3 +113,30 @@ Mapbox API -
 https://api.mapbox.com/geocoding/v5/mapbox.places/pune.json?access_token=pk.eyJ1Ijoic3luZXJneTI0MTEiLCJhIjoiY2p4NXc0cm53MDZoODQwbHFuNzdzMzV5NCJ9.DKIDo6bcG51yLXf2DmlYcQ
 Forecast API -
 https://api.darksky.net/forecast/473fe696d21e65026547b2d50b56014c/37.8267,-122.4233
+
+
+# Streams
+- Readable - Request, standard Input
+- Writable - Response, standard output
+- Transform - transform one stream into another ; compression/ encryption
+- Duplex - Network Socket
+
+# Express
+- Adding middleware - app level, endpoint level
+- URL Handling - Route Parameter; Request Body, Query String
+- Router - /posts - PostRouter
+
+# MongoDB | Mongoose
+- Schema based solution
+- Validation - required, Custom validators
+- Hooks
+
+# JWT Authentication
+
+# View Engines
+
+# Testing - Mocha Chai
+
+# Socket Programming
+
+# App Deployment - Heroku Cloud

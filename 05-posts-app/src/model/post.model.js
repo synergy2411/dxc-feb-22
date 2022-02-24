@@ -11,12 +11,24 @@ const postSchema = new Schema({
     },
     author : {
         type : String,
-        required : true
+        required : true,
+        validate : {
+            validator : (value) => value.includes("@"),
+            message : () => "Author should be in proper email format"
+        }
     },
     published : {
         type : Boolean,
         default : false
     }
+})
+
+postSchema.pre("save", () => {
+    console.log("Before saving hook works")
+})
+
+postSchema.post("save", () => {
+    console.log("After saving hook works")
 })
 
 const PostModel = model("Post", postSchema )
