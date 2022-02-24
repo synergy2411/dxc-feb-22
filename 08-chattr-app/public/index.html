@@ -48,7 +48,22 @@
     </div>
 
     <script>
-        const socket = io.connect("/")
+        $(document).ready(() => {
+            const socket = io.connect("/")
+            const chatterName = prompt("Please enter your name")
+            socket.on("acknowledgement", (data) => {
+                console.log(data);
+            })
+            $("#btnSend").on("click", event => {
+                event.preventDefault();
+                const message = $("#txtMsg").val();
+                socket.emit("MessageToServer", {chatterName, message})
+                $("#txtMsg").val('');
+            })
+            socket.on("MessageToClient", ({chatterName , message}) => {
+                $("#taMsg").append(chatterName.toUpperCase() + " : " + message + "\n");
+            })
+        })
     </script>
     
 </body>

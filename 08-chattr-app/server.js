@@ -6,6 +6,12 @@ const io = require("socket.io")(server);
 
 io.on("connection", (client) => {
     console.log("Connected...")
+    client.emit("acknowledgement", {message : "You are connected now."});
+    client.on("MessageToServer", ({chatterName, message}) => {
+        console.log(chatterName + " says : ", message);
+        client.emit("MessageToClient", {chatterName : "Me", message});
+        client.broadcast.emit("MessageToClient", {chatterName, message});
+    })
 })
 
 app.get("/index", (req, res) => {
