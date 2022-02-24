@@ -148,3 +148,11 @@ sXSgCbtFfU1AJ1LB
 cluster0-shard-00-02.e9xsq.mongodb.net:27017
 
 mongodb+srv://dxcuser:sXSgCbtFfU1AJ1LB@cluster0.e9xsq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+Heroku Cloud -> MongoDB Atlas (free version -> NO restriction)
+
+
+# App Deployment Steps - Heroku
+- Download heroku CLI - npm i heroku -g
+- Signup and login on heroku.com
+- Create Git Repo for deployed project
