@@ -132,12 +132,19 @@ https://api.darksky.net/forecast/473fe696d21e65026547b2d50b56014c/37.8267,-122.4
 - Hooks
 
 # JWT Authentication
+- sign
+- verify
 
 # View Engines
+- EJS
+- Handlebars
+- Jade / Pug
+- Vash
 
-# Testing - Mocha Chai
+# Testing - Mocha Chai ChaiHTTP
 
-# Socket Programming
+# Socket Programming 
+- socket.io
 
 # App Deployment - Heroku Cloud
 
@@ -168,3 +175,13 @@ Heroku Cloud -> MongoDB Atlas (free version -> NO restriction)
 - Bi-directional Full Duplex communication
 - Connected Architecture
 - socket.io
+
+
+# Microservices
+- independent piece of code
+- fast to develop
+- ease of testing
+- faster/ performant app
+- Smaller Functionality
+- Platform independent
+- Boundries with API
