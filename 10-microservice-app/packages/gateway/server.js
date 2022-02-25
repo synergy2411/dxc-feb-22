@@ -1,21 +1,12 @@
 const express = require("express");
-const { buildSchema } = require("graphql");
 const { graphqlHTTP } = require("express-graphql");
+const schema = require("./graphql/query/schema");
+const rootValue = require("./graphql/resolvers/resolver");
 
 const app = express();
 const PORT = process.env.PORT || 9090;
 
 app.get("/index", (_, res) => res.send({message : "Index Route"}))
-
-const schema = buildSchema(`
-    type Query {
-        hi : String
-    }
-`)
-
-const rootValue = {
-    hi : () => "Hi from GraphQL"
-}
 
 app.use(graphqlHTTP({
     schema,
