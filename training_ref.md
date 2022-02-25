@@ -192,3 +192,11 @@ Heroku Cloud -> MongoDB Atlas (free version -> NO restriction)
 - lerna init --independent
 
 - npx lerna init --independent
+
+# pm2 - Process Manager
+- pm2 start
+- pm2 stop
+- pm2 delete
+- pm2 logs
+- pm2 monit
+- pm2 ecosystem
