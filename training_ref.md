@@ -185,3 +185,10 @@ Heroku Cloud -> MongoDB Atlas (free version -> NO restriction)
 - Smaller Functionality
 - Platform independent
 - Boundries with API
+
+
+# Lerna installation
+- npm i lerna -g
+- lerna init --independent
+
+- npx lerna init --independent
