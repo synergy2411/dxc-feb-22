@@ -6,8 +6,6 @@ const rootValue = require("./graphql/resolvers/resolver");
 const app = express();
 const PORT = process.env.PORT || 9090;
 
-app.get("/index", (_, res) => res.send({message : "Index Route"}))
-
 app.use(graphqlHTTP({
     schema,
     rootValue,
